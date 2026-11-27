@@ -1,0 +1,1011 @@
+/* 안쪽 화면 공통 (사이드바 · 상단바 · 본문 · 카드 · 표) */
+.shell {
+  min-height: 100vh;
+  display: flex;
+  background: var(--color-bg);
+}
+
+.main {
+  flex: 1;
+  min-width: 0;
+}
+
+/* 사이드바 */
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 228px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 16px 12px;
+  background: var(--color-sidebar-bg);
+  border-right: 1px solid var(--color-border);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 6px 16px;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--color-primary);
+  color: var(--color-on-dark);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+
+.brandName {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.brandSub {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--color-text-muted);
+}
+
+.search {
+  height: 36px;
+  padding: 0 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-button);
+  background: var(--color-bg);
+  font: inherit;
+  font-size: 13px;
+  color: var(--color-text);
+}
+
+.search::placeholder {
+  color: var(--color-accent);
+}
+
+.sectionLabel {
+  margin: 18px 8px 6px;
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 36px;
+  padding: 0 10px;
+  border-radius: var(--radius-button);
+  font: inherit;
+  font-size: 14px;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.navItemDisabled {
+  color: var(--color-text-muted);
+  cursor: default;
+}
+
+.navActive {
+  background: var(--color-bg);
+  font-weight: 700;
+}
+
+.navNo {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--color-accent);
+  color: var(--color-on-dark);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* 하단 프로필 (누르면 오른쪽 패널) */
+.profileButton {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 14px 6px 4px;
+  border: none;
+  border-top: 1px solid var(--color-border);
+  background: transparent;
+  font: inherit;
+  text-align: left;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: var(--color-on-dark);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.userName {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.userTitle {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.chevron {
+  margin-left: auto;
+  color: var(--color-text-muted);
+}
+
+/* 프로필 패널 (오른쪽에서 나옴) */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(23, 22, 20, 0.2);
+  z-index: 40;
+}
+
+.panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 320px;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  background: var(--color-bg);
+  border-left: 1px solid var(--color-border);
+  box-shadow: -8px 0 24px rgba(23, 22, 20, 0.08);
+}
+
+.panelHead {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.panelName {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.panelSub {
+  margin: 2px 0 0;
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.closeButton {
+  border: none;
+  background: transparent;
+  font-size: 18px;
+  line-height: 1;
+  color: var(--color-text-muted);
+  cursor: pointer;
+}
+
+.infoList {
+  margin: 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.infoRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 14px;
+}
+
+.infoRow dt {
+  color: var(--color-text-muted);
+}
+
+.infoRow dd {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+/* 상단바 */
+.topbar {
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 13px;
+}
+
+.crumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.crumbNo {
+  font-family: var(--font-mono);
+  color: var(--color-text-muted);
+}
+
+.crumbSep {
+  color: var(--color-text-muted);
+}
+
+.crumbCurrent {
+  color: var(--color-text);
+}
+
+.clock {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+/* 본문 */
+.body {
+  padding: 24px;
+}
+
+.titleRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.pageTitle {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.aside {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.asideLink {
+  color: var(--color-text-muted);
+  text-decoration: none;
+}
+
+.card {
+  margin-bottom: 16px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  background: var(--color-bg);
+  padding: 4px 24px;
+}
+
+.cardHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.cardTitle {
+  margin: 4px 0 12px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+}
+
+/* 홈 */
+.hero {
+  margin-bottom: 16px;
+  padding: 24px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  background: var(--color-bg);
+}
+
+.heroDate {
+  margin: 0 0 8px;
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.heroTitle {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.accent {
+  color: var(--color-accent);
+}
+
+.homeGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.onlineCount {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: var(--color-success-bg);
+  color: var(--color-success);
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.onlineList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0 0 16px;
+  margin: 0;
+  list-style: none;
+}
+
+.onlineItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px 4px 4px;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  font-size: 13px;
+}
+
+.onlineEmpty {
+  margin: 0;
+  padding: 0 0 16px;
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+/* 게시판 목록 · 상세 */
+.chip {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  background: var(--color-chip-bg);
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.chipPinned {
+  background: var(--color-success-bg);
+  color: var(--color-success);
+  font-weight: 700;
+}
+
+.noticeRow {
+  display: block;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.noticeRow:last-child {
+  border-bottom: none;
+}
+
+.noticeMeta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.noticeTitle {
+  display: block;
+  margin-top: 8px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.noticeFoot {
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.noticeBody {
+  padding: 20px 0 24px;
+  font-size: 15px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+
+.detailMeta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 16px;
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.composeGrid {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 12px;
+  padding-top: 12px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.input,
+.select,
+.textarea {
+  padding: 0 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-button);
+  background: var(--color-bg);
+  font: inherit;
+  font-size: 14px;
+  color: var(--color-text);
+}
+
+.input,
+.select {
+  height: 40px;
+}
+
+.textarea {
+  min-height: 96px;
+  padding: 10px 12px;
+  resize: vertical;
+}
+
+.checkRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--color-text);
+}
+
+.composeFoot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0 16px;
+}
+
+/* 관리자 화면 표 · 버튼 */
+.issueRow {
+  display: flex;
+  gap: 8px;
+  padding-bottom: 20px;
+}
+
+.hintLabel {
+  display: block;
+  margin: 4px 0 8px;
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.table th {
+  padding: 14px 12px 12px 0;
+  font-size: 12px;
+  font-weight: 400;
+  text-align: left;
+  color: var(--color-text-muted);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.table td {
+  padding: 16px 12px 16px 0;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: middle;
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+.code {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.primaryButton,
+.secondaryButton {
+  height: 36px;
+  padding: 0 16px;
+  border-radius: var(--radius-button);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.primaryButton {
+  border: 1px solid var(--color-primary);
+  background: var(--color-primary);
+  color: var(--color-bg);
+}
+
+.secondaryButton {
+  border: 1px solid var(--color-border);
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.chipAvailable {
+  background: var(--color-success-bg);
+  color: var(--color-success);
+  font-weight: 700;
+}
+
+.usedBy {
+  margin-left: 8px;
+  font-size: 13px;
+  color: var(--color-text);
+}
+
+.userNameLine,
+.userTitleLine {
+  display: block;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+/* 근태 · 휴가 · 홈 위젯 */
+.attendanceCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 24px;
+}
+
+.timeRow {
+  display: flex;
+  gap: 48px;
+}
+
+.timeBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.timeLabel {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.timeValue {
+  font-family: var(--font-mono);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--color-text);
+}
+
+.chipWorking {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  background: var(--color-warning-bg);
+  color: var(--color-warning-text);
+  white-space: nowrap;
+}
+
+.primaryButton:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.heroSub {
+  margin: 8px 0 0;
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+.heroActions {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.leaveGrid {
+  display: grid;
+  grid-template-columns: 180px 1fr 1fr;
+  gap: 12px;
+  padding-top: 12px;
+}
+
+.leaveBig {
+  font-size: 40px;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  line-height: 1.1;
+}
+
+.leaveBigSub {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-text-muted);
+}
+
+.leaveBlocks {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 6px;
+  margin: 16px 0;
+}
+
+.leaveBlock,
+.leaveBlockOn {
+  height: 22px;
+  border-radius: 4px;
+}
+
+.leaveBlock {
+  background: var(--color-chip-bg);
+}
+
+.leaveBlockOn {
+  background: var(--color-primary);
+}
+
+.leaveApply {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  line-height: 34px;
+  margin-bottom: 16px;
+}
+
+/* 회의실 예약 · 주간 시간표 (1분 = 1px, 한 시간 = 60px) */
+.ttNav {
+  display: flex;
+  gap: 8px;
+  padding: 12px 0;
+}
+
+.ttHead,
+.ttBody {
+  display: grid;
+  grid-template-columns: 56px repeat(7, minmax(0, 1fr));
+}
+
+.ttHead {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.ttDayHead {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 8px 0;
+}
+
+.ttDayName {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.ttDayDate {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--color-text-muted);
+}
+
+.ttToday .ttDayName {
+  color: var(--color-accent);
+}
+
+.ttBody {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.ttTimes {
+  position: relative;
+}
+
+.ttTime {
+  position: absolute;
+  right: 8px;
+  transform: translateY(-50%);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--color-text-muted);
+}
+
+.ttCol {
+  position: relative;
+  border-left: 1px solid var(--color-border);
+  background-image: repeating-linear-gradient(
+    to bottom,
+    var(--color-border) 0 1px,
+    transparent 1px 60px
+  );
+}
+
+.ttBlock {
+  position: absolute;
+  left: 4px;
+  right: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 4px 6px;
+  overflow: hidden;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: var(--color-chip-bg);
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 12px;
+  line-height: 1.3;
+}
+
+.ttBlockMine {
+  background: var(--color-accent-bg);
+}
+
+.ttBlockSelected {
+  border-color: var(--color-primary);
+}
+
+.ttBlockTitle {
+  overflow: hidden;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ttBlockMeta {
+  overflow: hidden;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--color-text-muted);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.roomGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  padding-top: 12px;
+}
+
+/* 구성원 관리 */
+.adminRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.adminRow:last-child {
+  border-bottom: none;
+}
+
+.adminIdentity {
+  display: flex;
+  flex-direction: column;
+  width: 190px;
+  flex-shrink: 0;
+  min-width: 0;
+}
+
+.adminEditForm {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+}
+
+.noInput {
+  width: 64px;
+  height: 36px;
+  font-family: var(--font-mono);
+}
+
+.deptInput {
+  width: 120px;
+  height: 36px;
+}
+
+.titleInput {
+  flex: 1;
+  min-width: 0;
+  height: 36px;
+}
+
+.adminRoleBox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.roleAdmin {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  background: var(--color-accent-bg);
+  color: var(--color-accent);
+  white-space: nowrap;
+}
+
+.secondaryButton:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+/* 조직도 */
+.deptGroup {
+  padding: 16px 0 8px;
+}
+
+.deptHead {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.deptName {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.deptCount {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.memberList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.memberRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+}
+
+.memberAvatar {
+  width: 36px;
+  height: 36px;
+  font-size: 12px;
+  border: 2px solid transparent;
+}
+
+/* 접속 중: 초록 테두리 */
+.memberAvatarOnline {
+  border-color: var(--color-success);
+}
+
+.memberInfo {
+  min-width: 0;
+}
+
+.memberNameLine {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.memberName {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.memberTitle {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.memberMeta {
+  margin-top: 2px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--color-text-muted);
+}

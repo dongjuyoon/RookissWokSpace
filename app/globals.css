@@ -1,0 +1,44 @@
+/* Design tokens. Colors and fonts are defined here only.
+   Approximate values from CLAUDE.md section 4; confirm before changing. */
+:root {
+  /* Colors */
+  --color-primary: #171614;   /* default button, titles */
+  --color-accent: #6b5cd6;    /* highlight, badges, breadcrumb current page */
+  --color-success: #1f8a63;   /* online, pinned, available */
+  --color-warning-bg: #fff4e5;
+  --color-warning-text: #b45309;
+  --color-bg: #ffffff;        /* main content background */
+  --color-sidebar-bg: #f5f5f4;
+  --color-border: #e5e5e3;    /* 1px cards, inputs, dividers */
+  --color-text: #171614;      /* body text */
+  --color-text-muted: #6b6a66;/* meta text */
+  --color-chip-bg: #efefed;
+  --color-success-bg: #e6f4ee;     /* available chip background */
+  --color-accent-bg: #ecebfb;      /* admin role badge background (accent tint) */
+  --color-error: #b42318;          /* form error message (not in CLAUDE.md; confirm) */
+  --color-on-dark: #ffffff;        /* text on the dark banner */
+  --color-on-dark-muted: #a6a59f;  /* secondary text on the dark banner */
+
+  /* Fonts (concrete font files are not decided yet; see CLAUDE.md section 8) */
+  --font-sans: system-ui, -apple-system, "Segoe UI", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+
+  /* Radius */
+  --radius-card: 12px;
+  --radius-button: 8px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.5;
+}
